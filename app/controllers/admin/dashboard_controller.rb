@@ -3,4 +3,5 @@ class Admin::DashboardController < ApplicationController
                                password: ENV['JUNGLE_PASSWORD']
   def show
   end
+
 end
