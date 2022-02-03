@@ -18,14 +18,14 @@
       </thead>
       <tbody>
         <% @order.line_items.each do |item| %>
-          <%= render 'item', product: item.product, quantity: item.quantity, total: item.product.price * item.quantity %>
+          <%= render 'item', product: item.product, quantity: item.quantity %>
         <% end %>
         <tr>
           <th colspan="4">
-            TOTAL:
+            EXAMPLE:
           </th>
           <th>
-            <%= cart_subtotal_cents / 100.0 %>
+            <%= humanized_money_with_symbol @order.line_items().to_a().sum() { |p| p.product.price * p.quantity } %>
           </th>
         </tr>
           <th colspan="4">
