@@ -25,7 +25,7 @@
             EXAMPLE:
           </th>
           <th>
-            <%= humanized_money_with_symbol @order.line_items().to_a().sum() { |p| p.product.price * p.quantity } %>
+            <%= humanized_money_with_symbol @order.line_items.to_a.sum { |p| p.product.price * p.quantity } %>
           </th>
         </tr>
           <th colspan="4">
