@@ -8,8 +8,8 @@
   </div>
 
   <ul id="categories">
-    <% @categories.each do |c| %>
-    <li><%= link_to c.title, {:action => 'show', :id => c.id} -%></li>
+    <% @categories.each do |category| %>
+    <li> <%= category.name %> </li>
     <% end %>
   </ul>
   

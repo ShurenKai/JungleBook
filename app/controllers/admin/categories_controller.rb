@@ -2,7 +2,7 @@ class Admin::CategoriesController < ApplicationController
   http_basic_authenticate_with name: ENV["JUNGLE_NAME"], password: ENV["JUNGLE_PASSWORD"]
 
   def index
-    @categories = Category.order(name: :desc).all
+    @categories = Category.order(id: :desc).all
   end
 
   def new
@@ -13,10 +13,13 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect to [:admin, :categories], notice: 'Category created!'
+      redirect_to [:admin, :categories], notice: 'Category created!'
     else
       render :new
     end 
+  end
+
+  def destroy
   end
 
   private
