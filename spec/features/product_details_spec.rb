@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Visitor can view product information", type: :feature do
   # SETUP
-  before do
+  before :each do
     @category = Category.create! name: 'Apparel'
 
     @category.products.create!(
