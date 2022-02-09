@@ -1,33 +1,33 @@
-# Jungle
+## Getting started
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+## Functional Requirements
 
-## Additional Steps for Apple M1 Machines
+### Feature: Sold Out Badge
 
-1. Make sure that you are runnning Ruby 2.6.6 (`ruby -v`)
-1. Install ImageMagick `brew install imagemagick imagemagick@6 --build-from-source`
-2. Remove Gemfile.lock
-3. Replace Gemfile with version provided [here](https://gist.githubusercontent.com/FrancisBourgouin/831795ae12c4704687a0c2496d91a727/raw/ce8e2104f725f43e56650d404169c7b11c33a5c5/Gemfile)
+- [x]When a product has 0 quantity, a sold out badge should be displayed on the product list page
 
-## Setup
+### Feature: Admin Categories
 
-1. Run `bundle install` to install dependencies
-2. Create `config/database.yml` by copying `config/database.example.yml`
-3. Create `config/secrets.yml` by copying `config/secrets.example.yml`
-4. Run `bin/rake db:reset` to create, load and seed db
-5. Create .env file based on .env.example
-6. Sign up for a Stripe account
-7. Put Stripe (test) keys into appropriate .env vars
-8. Run `bin/rails s -b 0.0.0.0` to start the server
+- [x]Admin users can list and create new categories
+- [x]Admins can add new products using the new category
+- [x]Restful routes (resources) used, and no extra unused routes exposed
 
-## Stripe Testing
+### Feature: User Authentication
 
-Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
+- [x]Get to the registration page from any page in order to create an account
+- [x]Sign up for a user account with e-mail, password, first name and last name
+- [x]Sign in using e-mail and password
+- [x]Log out from any page
+- [x]Sign up with an existing e-mail address (uniqueness validation)
+- [x]Passwords are not stored as plain text in the database. Instead, has_secure_password is used in the User model, leveraging the bcrypt gem
 
-More information in their docs: <https://stripe.com/docs/testing#cards>
+#### Enhancement: Order Details Page
 
-## Dependencies
-
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
-* Stripe
+- [x]The order page contains items, their image, name, description, quantities and line item totals
+- [x]The final amount for the order is displayed
+- [x]The email that was used to place the order is displayed
+- [x]Place an order (i.e. without logging in and therefore without an e-mail address). The original functionality from the inherited code (even though it is not realistic) should therefore not be suppressed.
+- [x]User must enter HTTP auth login/password to access admin functionality
+- [x]Should ideally be implemented in an abstract top-level class for admin controllers (e.g., Admin::BaseController which the other concrete admin controllers inherit)
+  Bug: Checking Out with Empty Cart
+- [x]When the cart is empty and the user goes to the carts#show page, instead of displaying the contents and a stripe checkout button, display a friendly message about how it is empty and link to the home page

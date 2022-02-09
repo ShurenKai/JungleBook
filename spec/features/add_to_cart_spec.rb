@@ -16,15 +16,11 @@ RSpec.feature "Visitor can add an item to their cart", type: :feature do
 
 # '<%= link_to cart_path do %> <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>) <% end %>'
 
-scenario "They can see that their cart changes" do
-  visit root_path
-  save_screenshot
-  sleep 5
-  click_on 'Add'
-  sleep 5
-  save_screenshot
-  expect(cart.size).to eq(1)
-end
+  scenario "They can see that their cart changes" do
+    visit root_path
+    click_on 'Add'
+    expect(page).to have_content 'My Cart (1)'
+  end
 
   scenario "They can view their cart" do
     visit root_path
