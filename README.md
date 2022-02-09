@@ -28,6 +28,4 @@
 - [x]The email that was used to place the order is displayed
 - [x]Place an order (i.e. without logging in and therefore without an e-mail address). The original functionality from the inherited code (even though it is not realistic) should therefore not be suppressed.
 - [x]User must enter HTTP auth login/password to access admin functionality
-- [x]Should ideally be implemented in an abstract top-level class for admin controllers (e.g., Admin::BaseController which the other concrete admin controllers inherit)
-  Bug: Checking Out with Empty Cart
 - [x]When the cart is empty and the user goes to the carts#show page, instead of displaying the contents and a stripe checkout button, display a friendly message about how it is empty and link to the home page
