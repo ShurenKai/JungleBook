@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: { case_sensitive: false }
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :password, length: { is: 5 }, presence: true 
+  validates :password, length: { minimum: 5 }, presence: true 
   validates :password_confirmation, presence: true 
   has_secure_password
 
