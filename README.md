@@ -1,5 +1,15 @@
 ## Getting started
 
+Welcome to my Jungle store :D
+
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+
 ## Functional Requirements
 
 ### Feature: Sold Out Badge
